@@ -27,7 +27,7 @@ apt-get -y install kibana
 
 #COPIANDO A CHAVE SSH E COLOCANDO NO DIRETORIO .SSH 
 
-aws s3 cp s3://sshkeyeks/kibana-cluster /root
+aws s3 cp s3://sshkeyeks/buckets3 /root
 touch /root/.ssh/id_rsa
 mv /root/kibana-cluster /root/.ssh/id_rsa
 chmod 400 /root/.ssh/id_rsa                           
@@ -39,7 +39,7 @@ ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
 #COPIANDO OS ARQUIVOS DO BITBUCKET 
 
- git clone git@bitbucket.org:smartmei/kibana-iac.git /home/ubuntu/kibana-iac
+ git clone git@bitbucket.org:/kibana-iac.git /home/ubuntu/kibana-iac
  cd /home/ubuntu/kibana-iac/ 
  git pull origin teste-arquivos
  rm -rf /etc/kibana/kibana.yml
